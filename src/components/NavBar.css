@@ -1,0 +1,16 @@
+.flexCont {
+    display: flex;
+    flex-direction: row;
+}
+
+.inverted.customCenter {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+
+/* .spacer {
+    display: flex;
+    flex: 1;
+} */
