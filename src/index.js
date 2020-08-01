@@ -1,3 +1,6 @@
+import 'whatwg-fetch';
+// TO MAKE FETCH WORK IN INTERNET EXPLORER
+// npm install --save whatwg-fetch
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

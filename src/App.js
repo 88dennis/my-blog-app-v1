@@ -23,7 +23,7 @@ function App() {
         <Route  path="/article-page/:name" component={ArticlePage} exact/>
         <Route  path="/articles-list" component={ArticlesListPage} exact/>
         {/* IF THE ROUTE HAS NO PATH THIS WILL RENDER EVERY TIME; THE SWITCH WILL RENDER THE FIRST URL MATCH */}
-        <Route component={<NotFoundPage />} />
+        <Route component={NotFoundPage} />
         </Switch>
         </div>
     </div>
