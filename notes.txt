@@ -1,0 +1,2 @@
+npm install --save whatwg-fetch
+//this will make sure that fetch will work on internet explorer
