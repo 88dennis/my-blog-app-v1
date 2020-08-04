@@ -1,2 +1,7 @@
 npm install --save whatwg-fetch
 //this will make sure that fetch will work on internet explorer
+
+go to index.html change the title
+
+go to manifest.json change the short name
+
