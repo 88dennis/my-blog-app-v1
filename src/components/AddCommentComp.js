@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import './AddCommentComp.css';
 
 
 function AddCommentComp({articleName, setArticleInfo}) {
@@ -27,6 +28,7 @@ const addComment = async () => {
 console.log(username);
     return (
         <>
+            <div className="addCommentForm">
             <div className="ui form segment">
                 <h3>Add a Comment</h3>
                 <label htmlFor="textInputId">
@@ -37,11 +39,10 @@ console.log(username);
                     Comment:
                       <textarea id="textAreaId" rows="4" cols="50" value={commentText} onChange={(event)=>setCommentText(event.target.value)}/>
                 </label>
-                
                 <br/>
                 <br/>
-
-                <button className="ui secondary submit button" onClick={()=>addComment()}>Add Comment</button>
+                <button className="ui addCommentBtn secondary submit button" onClick={()=>addComment()}>Add Comment</button>
+            </div>
             </div>
         </>
     )

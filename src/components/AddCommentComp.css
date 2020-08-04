@@ -1,0 +1,28 @@
+.addCommentBtn {
+    width: 100%;
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+/* .addCommentBtn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+} */
+
+.addCommentForm {
+    width: 50%;
+    min-width: 300px;
+}
