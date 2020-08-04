@@ -2,12 +2,16 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import articleContent from './article-content';
 import ArticlesListComp from '../components/ArticlesListComp';
+import CommentsList from '../components/CommentsList';
+import UpvoteComp from '../components/UpvoteComp';
+import AddCommentComp from '../components/AddCommentComp';
 import NotFoundPage from './NotFoundPage';
+
 
 function ArticlePage(props) {
     const name = props.match.params.name;
     const[articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: []});
-    console.log(name);
+    // console.log(name);
 
     // useEffect(()=>{
     // setArticleInfo({ upvotes: 3});      
@@ -17,9 +21,9 @@ function ArticlePage(props) {
         const fetchData = async () => {
             //in the package.json for client side type the  "proxy": "http://localhost:8000/",
             const result = await fetch("/api/articles/" + name);
-            console.log(result)
+            // console.log(result)
             const body = await result.json();   
-            console.log(body)
+            // console.log(body)
             setArticleInfo(body)
         }
         fetchData();
@@ -49,36 +53,43 @@ function ArticlePage(props) {
     const otherArticles = articleContent.filter(article => article.name !== name)
     // console.log(otherArticles)
 
-    console.log(articleInfo)
+    // console.log(articleInfo)
     return (
         <>
             <h1>Artice Page</h1>
-            <h2>Article about {articleInfo.name}</h2>
-            <h3>Now has upvotes: {articleInfo.upvotes}</h3>
-           {articleInfo.comments[0] ? <h3>user : {articleInfo.comments[0].username}</h3> : null}
-           {articleInfo.comments[0] ? <h3>Now has comments: {articleInfo.comments[0].text}</h3> : null}
-
-            {/* <h3>Now has comments: {articleInfo.comments[0].text}</h3> */}
+            {/* <h2>Article about {articleInfo.name}</h2> */}
             <h3>{article.title ? article.title : "Article"}</h3>
-
-            {/* ARRAYS CAN ALSO BE DISPLAYED DIRECTLY*/}
-            <p>{article.content}</p>
-
-
+           <UpvoteComp articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo}/>
+           <br/>
             {/* OR YOU CAN MAP ON IT */}
             {article.content.map((paragraph, index) => {
-                index = index + 1;
-                // console.log(index)
+                            index = index + 1;
                 return(
                     // this will return each paragraph content inside a p tag
                     <p key={index}>{paragraph}</p>
                 )
             })}
 
-            {/* {newArticles} */}
-
+            <CommentsList comments = {articleInfo.comments}/>
+            <AddCommentComp setArticleInfo={setArticleInfo} articleName={name}/>
                 <h3>Other Articles:</h3>
             <ArticlesListComp articles={otherArticles}/>
+
+
+           {/* {articleInfo.comments[0] ? <h3>user : {articleInfo.comments[0].username}</h3> : null} */}
+           {/* {articleInfo.comments[0] ? <h3>Now has comments: {articleInfo.comments[0].text}</h3> : null} */}
+
+            {/* <h3>Now has comments: {articleInfo.comments[0].text}</h3> */}
+
+            {/* ARRAYS CAN ALSO BE DISPLAYED DIRECTLY*/}
+            {/* <p>{article.content}</p> */}
+
+
+           
+
+            {/* {newArticles} */}
+
+         
         </>
     )
 }
