@@ -11,7 +11,6 @@ function ArticlesListPage() {
         <>
         <div className= "ui container">
             <ArticlesListComp articles={articleContent} />
-
             </div>
         </>
     )
