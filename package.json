@@ -1,9 +1,8 @@
 {
     "name": "my-blog-app-v1",
-    "homepage": "https://88dennis.github.io/my-blog-app-v1/",
     "version": "0.1.0",
+    "homepage": "https://88dennis.github.io/my-blog-app-v1/",
     "private": true,
-    "proxy": "http://localhost:8000/",
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.5.0",

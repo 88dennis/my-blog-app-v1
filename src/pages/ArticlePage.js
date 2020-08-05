@@ -11,6 +11,9 @@ import NotFoundPage from './NotFoundPage';
 function ArticlePage(props) {
     const name = props.match.params.name;
     const[articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: []});
+    // const URL = "https://sarms-blog-app.herokuapp.com";
+    
+
     // console.log(name);
 
     // useEffect(()=>{
@@ -19,8 +22,11 @@ function ArticlePage(props) {
 
     useEffect(()=>{
         const fetchData = async () => {
+            // const URL = "http://localhost:8000";
             //in the package.json for client side type the  "proxy": "http://localhost:8000/",
-            const result = await fetch("/api/articles/" + name);
+            const result = await fetch("https://sarms-blog-app.herokuapp.com/api/articles/" + name);
+            // const result = await fetch("http://localhost:8000/api/articles/" + name);
+
             // console.log(result)
             const body = await result.json();   
             // console.log(body)

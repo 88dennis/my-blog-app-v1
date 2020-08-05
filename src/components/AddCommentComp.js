@@ -7,9 +7,15 @@ function AddCommentComp({articleName, setArticleInfo}) {
 
 const[username, setUsername] = useState('');
 const[commentText, setCommentText] = useState('');
+// const URL = "https://sarms-blog-app.herokuapp.com";
 
 const addComment = async () => {
-    const result = await fetch('/api/articles/' + articleName + '/add-comment', {
+// const URL = "http://localhost:8000";
+
+const result = await fetch('https://sarms-blog-app.herokuapp.com/api/articles/' + articleName + '/add-comment', {
+
+    // const result = await fetch('http://localhost:8000/api/articles/' + articleName + '/add-comment', {
+        
         method: 'post',
         body: JSON.stringify({username : username, text: commentText }),
         headers: {

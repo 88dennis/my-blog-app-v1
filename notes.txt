@@ -5,3 +5,6 @@ go to index.html change the title
 
 go to manifest.json change the short name
 
+ "homepage": "https://88dennis.github.io/my-blog-app-v1/",
+
+ "proxy":"http://localhost:8000/",
